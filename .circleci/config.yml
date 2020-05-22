@@ -23,10 +23,11 @@ jobs:
 
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
-      - run: mkdir test_result
-      - run: go test -v ./... > test_result/test.out 
+      - run: go test -v ./... > test.out 
       - run: go build
       - store_test_results:
           path: test_result
       - store_artifacts:
-          path: circle_ci_test
+          path: 
+            - test.out
+            - circle_ci_test
