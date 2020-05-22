@@ -25,6 +25,6 @@ jobs:
       - run: mkdir outputs
       - run: go get -v -t -d ./...
       - run: go test -v ./... > outputs/test.out 
-      - run: go build -o > outputs/
+      - run: go build -o > outputs/circle_ci_test
       - store_artifacts:
           path: outputs
