@@ -22,12 +22,9 @@ jobs:
       - checkout
 
       # specify any bash command here prefixed with `run: `
+      - run: mkdir outpts
       - run: go get -v -t -d ./...
-      - run: go test -v ./... > test.out 
-      - run: go build
-      - store_test_results:
-          path: test_result
+      - run: go test -v ./... > outputs/test.out 
+      - run: go build -o > outputs/
       - store_artifacts:
-          path: 
-            - test.out
-            - circle_ci_test
+          path: outputs
