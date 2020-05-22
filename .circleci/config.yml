@@ -25,5 +25,7 @@ jobs:
       - run: go get -v -t -d ./...
       - run: go test -v ./...
       - run: go build
+      - store_test_results:
+        path: test-results
       - store_artifacts:
-          path: circle_ci_test
+        path: circle_ci_test
